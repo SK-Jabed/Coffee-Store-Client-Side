@@ -5,9 +5,9 @@ import Swal from 'sweetalert2';
 const UpdateCoffee = () => {
     const coffee = useLoaderData();
 
-    const { _id, name, chef, supplier, taste, photo } = coffee;
+    const { _id, name, chef, supplier, taste, category, details, photo } = coffee;
 
-    const handleAddCoffee = (e) => {
+    const handleUpdateCoffee = (e) => {
       e.preventDefault();
 
       const name = e.target.name.value;
@@ -18,7 +18,7 @@ const UpdateCoffee = () => {
       const details = e.target.details.value;
       const photo = e.target.photo.value;
 
-      const newCoffee = {
+      const updatedCoffee = {
         name,
         chef,
         supplier,
@@ -28,23 +28,23 @@ const UpdateCoffee = () => {
         photo,
       };
 
-      console.log(newCoffee);
+      console.log(updatedCoffee);
 
       // Send New Coffee Data to The Server
-      fetch("http://localhost:5000/coffee", {
-        method: "POST",
+      fetch(`http://localhost:5000/coffee/${_id}`, {
+        method: "PUT",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(newCoffee),
+        body: JSON.stringify(updatedCoffee),
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          if (data.insertedId) {
+          if (data.modifiedCount > 0) {
             Swal.fire({
               title: "Success!",
-              text: "Coffee Added Successfully",
+              text: "Coffee Updated Successfully",
               icon: "success",
               confirmButtonText: "Okay",
             });
@@ -67,7 +67,7 @@ const UpdateCoffee = () => {
                 normal distribution of letters.
               </p>
             </div>
-            <form onSubmit={handleAddCoffee} className="card-body">
+            <form onSubmit={handleUpdateCoffee} className="card-body">
               {/* form first row */}
               <div className="flex flex-col lg:flex-row gap-5">
                 <div className="form-control flex-1">
@@ -77,6 +77,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="name"
+                    defaultValue={name}
                     placeholder="coffee name"
                     className="input input-bordered"
                     required
@@ -89,6 +90,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="chef"
+                    defaultValue={chef}
                     placeholder="chef name"
                     className="input input-bordered"
                     required
@@ -104,6 +106,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="supplier"
+                    defaultValue={supplier}
                     placeholder="coffee supplier"
                     className="input input-bordered"
                     required
@@ -116,6 +119,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="taste"
+                    defaultValue={taste}
                     placeholder="taste name"
                     className="input input-bordered"
                     required
@@ -131,6 +135,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="category"
+                    defaultValue={category}
                     placeholder="coffee Category"
                     className="input input-bordered"
                     required
@@ -143,6 +148,7 @@ const UpdateCoffee = () => {
                   <input
                     type="text"
                     name="details"
+                    defaultValue={details}
                     placeholder="Coffee Details"
                     className="input input-bordered"
                     required
@@ -157,6 +163,7 @@ const UpdateCoffee = () => {
                 <input
                   type="text"
                   name="photo"
+                  defaultValue={photo}
                   placeholder="Photo url"
                   className="input input-bordered"
                   required
