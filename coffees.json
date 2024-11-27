@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "6745ea7a7c17387ec5948821",
+    "name": "Americano Coffee",
+    "chef": "Mr. Martin Paul",
+    "supplier": "Roast & Brew",
+    "taste": "Chocolatey, Sweet, Creamy",
+    "category": "Espresso-based",
+    "details": "A coffee drink made with espresso, steamed milk, chocolate syrup, and whipped cream.",
+    "photo": "https://i.ibb.co.com/dJXPXbM/5.png"
+  },
+  {
+    "_id": "6745f3557c17387ec5948822",
+    "name": "Espresso Coffee",
+    "chef": "John Doe",
+    "supplier": "Café Roasters",
+    "taste": "Bold, Rich, Bitter",
+    "category": "Espresso",
+    "details": "A strong, concentrated coffee brewed by forcing hot water under pressure through finely ground coffee beans.",
+    "photo": "https://i.ibb.co.com/FqY4Bzk/4.png"
+  },
+  {
+    "_id": "6745f3b97c17387ec5948823",
+    "name": "Black Coffee",
+    "chef": "Sarah Smith",
+    "supplier": "Brew Masters",
+    "taste": "Creamy, Smooth, Mild",
+    "category": "Espresso-based",
+    "details": "A creamy coffee made with espresso and steamed milk, topped with a light layer of foam.",
+    "photo": "https://i.ibb.co.com/VM0T8qm/3.png"
+  },
+  {
+    "_id": "6745f4517c17387ec5948824",
+    "name": "Iced Coffee",
+    "chef": "Michael Brown",
+    "supplier": "Cold Brew Co.",
+    "taste": "Refreshing, Sweet, Bold",
+    "category": "Iced",
+    "details": "Chilled coffee served with ice, offering a refreshing option for coffee lovers during warm weather.",
+    "photo": "https://i.ibb.co.com/HPCmYmG/2.png"
+  },
+  {
+    "_id": "6745f5907c17387ec5948825",
+    "name": "Cappuccino",
+    "chef": "David Lee",
+    "supplier": "Café Central",
+    "taste": "Smooth, Light, Strong",
+    "category": "Espresso",
+    "details": "A shot of espresso diluted with hot water, creating a coffee with a lighter, milder taste.",
+    "photo": "https://i.ibb.co.com/2YWTqPh/1.png"
+  },
+  {
+    "_id": "6745f5f57c17387ec5948826",
+    "name": "Nitro Cold Brew",
+    "chef": "Oliver Johnson",
+    "supplier": "Cloud Coffee",
+    "taste": "Smooth, Rich, Creamy",
+    "category": "Iced",
+    "details": "Cold brew coffee infused with nitrogen, giving it a smooth, creamy texture and a frothy head.",
+    "photo": "https://i.ibb.co.com/YyWTZKy/6.png"
+  }
+]
