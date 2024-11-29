@@ -4,6 +4,7 @@ import { RiGoogleFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { createNewUser } = useContext(AuthContext);
@@ -21,7 +22,37 @@ const SignUp = () => {
 
         console.log({name, email, photo, password});
 
-        createNewUser();
+        createNewUser(email, password)
+            .then(result => {
+                console.log("User created at firebase", result.user);
+                const createdAt = result?.user?.metadata?.creationTime;
+
+                const newUser = {name, email, createdAt};
+
+                // Save New User to the Database
+                fetch("http://localhost:5000/users", {
+                  method: "POST",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(newUser),
+                })
+                  .then((res) => res.json())
+                  .then((data) => {
+                    if (data.insertedId) {
+                      Swal.fire({
+                        title: "Success!",
+                        text: "User Created Successfully",
+                        icon: "success",
+                        confirmButtonText: "Okay",
+                      });
+                    }
+                  });
+
+            })
+            .catch(error => {
+                console.log("ERROR", error.message);
+            })
     }
 
     return (
