@@ -6,6 +6,7 @@ import HomePage from "../pages/HomePage";
 import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import SignUp from "../components/SignUp";
 import SignIn from "../components/SignIn";
+import Users from "../components/Users";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,13 @@ const router = createBrowserRouter([
       {
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
-        loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffee/${params.id}`),
+      },
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () => fetch("http://localhost:5000/users"),
       },
     ],
   },
@@ -34,14 +41,14 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/auth/signUp",
-        element: <SignUp></SignUp>
+        element: <SignUp></SignUp>,
       },
       {
         path: "/auth/signIn",
-        element: <SignIn></SignIn>
-      }
-    ]
-  }
+        element: <SignIn></SignIn>,
+      },
+    ],
+  },
 ]);
 
 export default router;
