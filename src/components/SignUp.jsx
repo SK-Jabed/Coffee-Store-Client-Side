@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { RiGoogleFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from '../providers/AuthProvider';
 
 const SignUp = () => {
+    const { createNewUser } = useContext(AuthContext);
+
     const [showPassword, setShowPassword] = useState(false);
+
     const handleSignUp = (e) => {
         e.preventDefault();
-        console.log("Form is Submitted");
+
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+
+        console.log({name, email, photo, password});
+
+        createNewUser();
     }
 
     return (
@@ -72,7 +85,7 @@ const SignUp = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </NavLink>
             </div>
-            <div className="form-control relative">
+            {/* <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Confirm Password</span>
               </label>
@@ -89,7 +102,7 @@ const SignUp = () => {
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </Link>
-            </div>
+            </div> */}
             {/* {error && <p className="font-semibold text-red-500">{error}</p>} */}
             <div className="form-control">
               <label className="label justify-start gap-2 cursor-pointer items-center">
