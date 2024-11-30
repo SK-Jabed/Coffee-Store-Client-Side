@@ -18,24 +18,22 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        
-
         // Delete from Database
-        fetch(`http://localhost:5000/users/${id}`, {
-            method: "DELETE"
+        fetch(`https://coffee-store-server-ten-ashen.vercel.app/users/${id}`, {
+          method: "DELETE",
         })
-        .then(res => res.json())
-        .then(data => {
+          .then((res) => res.json())
+          .then((data) => {
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              const remainingUsers = users.filter(user => user._id !== id);
+              const remainingUsers = users.filter((user) => user._id !== id);
               setUsers(remainingUsers);
             }
-        })
+          });
       }
     });
   };
