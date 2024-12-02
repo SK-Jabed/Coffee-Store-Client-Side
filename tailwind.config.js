@@ -7,6 +7,10 @@ export default {
         raleway: ["Raleway", "sans-serif"], // Example for Google Font
         rancho: ["Rancho", "cursive"], // Example for Google Font
       },
+      backgroundImage: {
+        "navbar-bg": "url('/src/assets/more/15.jpg')",
+        "banner-bg": "url('/src/assets/more/3.png')",
+      },
     },
   },
   plugins: [require("daisyui")],

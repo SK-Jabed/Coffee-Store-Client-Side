@@ -50,7 +50,7 @@ const Navbar = () => {
 
   return (
     <div className="h-24">
-      <div className="bg-[#2b2301] z-50 fixed w-full border-b-2">
+      <div className="z-50 fixed w-full bg-navbar-bg bg-cover bg-center">
         <div className="container w-11/12 mx-auto py-4">
           <div className="mx-auto flex justify-between items-center">
             <div className="dropdown lg:hidden relative ml-2">
@@ -70,7 +70,7 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="flex items-center gap-1">
-                <img className="w-14 h-16" src={logo} alt="Coffee Store Logo" />
+              <img className="w-14 h-16" src={logo} alt="Coffee Store Logo" />
               <h2 className="text-4xl font-rancho font-medium text-white">
                 Espresso Emporium
               </h2>
