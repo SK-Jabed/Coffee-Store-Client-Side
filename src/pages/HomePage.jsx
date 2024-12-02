@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CoffeeCard from '../components/CoffeeCard';
 import Banner from '../components/Banner';
+import AboutCoffee from '../components/AboutCoffee';
 
 const HomePage = () => {
     const loadedCoffees = useLoaderData();
@@ -10,6 +11,7 @@ const HomePage = () => {
     return (
       <div>
         <Banner></Banner>
+        <AboutCoffee></AboutCoffee>
         <div className="w-11/12 mx-auto">
           <p>--- Sip & Savor ---</p>
           <h2>Our Popular Products</h2>
