@@ -9,7 +9,7 @@ export default {
       },
       backgroundImage: {
         "navbar-bg": "url('/src/assets/more/15.jpg')",
-        "banner-bg": "url('/src/assets/more/3.png')",
+        "banner-bg": "url('/src/assets/more/6.jpeg')",
       },
     },
   },
