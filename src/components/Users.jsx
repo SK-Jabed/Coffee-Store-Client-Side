@@ -19,7 +19,7 @@ const Users = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // Delete from Database
-        fetch(`https://coffee-store-server-ten-ashen.vercel.app/users/${id}`, {
+        fetch(`http://localhost:5000/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

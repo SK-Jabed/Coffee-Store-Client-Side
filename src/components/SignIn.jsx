@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { RiGoogleFill } from "react-icons/ri";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const SignIn = () => {
@@ -24,7 +23,7 @@ const SignIn = () => {
         const lastSignInTime = result?.user?.metadata?.lastSignInTime;
         const signInInfo = { email, lastSignInTime };
 
-        fetch(`https://coffee-store-server-ten-ashen.vercel.app/users`, {
+        fetch(`http://localhost:5000/users`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

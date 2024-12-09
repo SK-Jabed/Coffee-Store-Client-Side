@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddCoffee from "../components/AddCoffee";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
 import UpdateCoffee from "../components/UpdateCoffee";
+import Users from "../components/Users";
+import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import HomePage from "../pages/HomePage";
-import AuthLayout from "../layouts/AuthLayout/AuthLayout";
-import SignUp from "../components/SignUp";
-import SignIn from "../components/SignIn";
-import Users from "../components/Users";
 
 const router = createBrowserRouter([
   {
@@ -16,8 +16,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
-        loader: () =>
-          fetch("https://coffee-store-server-ten-ashen.vercel.app/coffee"),
+        loader: () => fetch("http://localhost:5000/coffee"),
       },
       {
         path: "/addCoffee",
@@ -27,15 +26,12 @@ const router = createBrowserRouter([
         path: "/updateCoffee/:id",
         element: <UpdateCoffee></UpdateCoffee>,
         loader: ({ params }) =>
-          fetch(
-            `https://coffee-store-server-ten-ashen.vercel.app/coffee/${params.id}`
-          ),
+          fetch(`http://localhost:5000/coffee/${params.id}`),
       },
       {
         path: "/users",
         element: <Users></Users>,
-        loader: () =>
-          fetch("https://coffee-store-server-ten-ashen.vercel.app/users"),
+        loader: () => fetch("http://localhost:5000/users"),
       },
     ],
   },

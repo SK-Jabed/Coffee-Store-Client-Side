@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { RiGoogleFill } from "react-icons/ri";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
-import { AuthContext } from "../providers/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SignUp = () => {
   const { createNewUser } = useContext(AuthContext);
@@ -30,7 +29,7 @@ const SignUp = () => {
         const newUser = { name, email, createdAt };
 
         // Save New User to the Database
-        fetch("https://coffee-store-server-ten-ashen.vercel.app/users", {
+        fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

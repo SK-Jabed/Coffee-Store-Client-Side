@@ -1,5 +1,4 @@
 import React from "react";
-import { data } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
@@ -19,7 +18,7 @@ const AddCoffee = () => {
     console.log(newCoffee);
 
     // Send New Coffee Data to The Server
-    fetch("https://coffee-store-server-ten-ashen.vercel.app/coffee", {
+    fetch("http://localhost:5000/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
