@@ -21,7 +21,10 @@ const SignUp = () => {
 
 
 
+
+
     
+
     console.log({ name, email, photo, password });
 
     createNewUser(email, password)
