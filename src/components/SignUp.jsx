@@ -21,8 +21,6 @@ const SignUp = () => {
 
     console.log({ name, email, photo, password });
 
-    
-
     createNewUser(email, password)
       .then((result) => {
         console.log("User created at firebase", result.user);
